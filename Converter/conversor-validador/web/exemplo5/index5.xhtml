@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h1>Seja bem-vindo!</h1>
+        
+        <h:form>
+            <h:messages/>
+            
+            <h:outputLabel value="Curso"/>
+            <p:selectOneMenu value="#{cursoController.curso}" converter="cursoConverter">
+                <f:selectItems value="#{cursoController.findAll()}"
+                               var="item" itemLabel="#{item.nome}"/>
+            </p:selectOneMenu>
+            <t/>
+            <t/>
+            
+            <h:commandButton value="Adicionar"
+                             action="#{cursoController.teste}"/>
+            
+            <br/>
+            <br/>
+            
+            <h:outputText value="#{cursoController.curso.nome}"/>
+        </h:form>
+        
+    </ui:define>
+
+</ui:composition>

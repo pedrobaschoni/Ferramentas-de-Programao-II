@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Curso</title>
+    </h:head>
+
+    <h:body>
+
+        <ui:insert name="top">
+            <h:form>
+                <p:menubar>
+                    <p:menuitem value="Home"
+                                outcome="/index"
+                                icon="pi pi-home"/>
+                    <p:menuitem value="Converter moeda"
+                                outcome="/exemplo1/index1"
+                                icon="pi pi-dollar"/>  
+                    <p:menuitem value="Converter data"
+                                outcome="/exemplo2/index2"
+                                icon="pi pi-calendar-times"/>
+                    <p:menuitem value="Calculadora com nome"
+                                outcome="/exemplo3/index3"
+                                icon="pi pi-user"/>
+                    <p:menuitem value="Converter data (ontem, hoje, amanhã)"
+                                outcome="/exemplo4/index4"
+                                icon="pi pi-calendar-minus"/>
+                    <p:submenu label="Curso" icon="pi pi-user">
+                        <p:menuitem value="Cadastrar curso"
+                                outcome="/exemplo5/Create"
+                                icon="pi pi-user-edit"/>
+                        
+                        <p:menuitem value="Cursos"
+                                outcome="/exemplo5/index5"
+                                icon="pi pi-users"/>
+                    </p:submenu>
+                   
+                    
+                </p:menubar>
+            </h:form>
+
+        </ui:insert>
+
+        <ui:insert name="content"/>
+
+    </h:body>
+
+</html>
